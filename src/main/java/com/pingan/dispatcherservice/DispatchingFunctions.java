@@ -16,7 +16,7 @@ public class DispatchingFunctions {
     @Bean
     public Function<OrderAcceptedMessage, Long> pack(){
         return orderAcceptedMessage -> { //以 OrderAcceptedMessage对象作为输入
-            logger.info("The order with id{} is packed.", orderAcceptedMessage.orderId());
+            logger.info("The order with id {} is packed.", orderAcceptedMessage.orderId());
             return orderAcceptedMessage.orderId(); //返回订单标识符（Long 类型）作为输出
         };
     }
